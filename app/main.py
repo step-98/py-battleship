@@ -21,8 +21,8 @@ class Ship:
         self.is_drowned = is_drowned
         for i in range(
                 max(
-                    (self.end[0] - self.start[0]),
-                    (self.end[1] - self.start[1])
+                    (end[0] - start[0]),
+                    (end[1] - start[1])
                 ) + 1
         ):
             if start[0] != end[0]:
