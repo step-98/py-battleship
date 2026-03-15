@@ -18,8 +18,6 @@ class Ship:
             is_drowned: bool = False
     ) -> None:
         self.decks = []
-        self.start = start
-        self.end = end
         self.is_drowned = is_drowned
         for i in range(
                 max(
