@@ -58,9 +58,8 @@ class Battleship:
             self,
             ships: list,
     ) -> None:
-        self.ships = ships
         self.field = {}
-        for ship in self.ships:
+        for ship in ships:
             current_ship = Ship(ship[0], ship[1])
             for deck in current_ship.decks:
                 self.field[deck.row, deck.column] = current_ship
@@ -93,16 +92,16 @@ class Battleship:
     def _validate_field(self) -> None:
         if len(set(self.field.values())) != 10:
             raise Exception("Invalid number of ships")
-        ships_lenghts = []
+        ships_lengths = []
         for ship in set(self.field.values()):
-            ships_lenghts.append(len(ship.decks))
-        if ships_lenghts.count(1) != 4:
+            ships_lengths.append(len(ship.decks))
+        if ships_lengths.count(1) != 4:
             raise Exception("Invalid number of ships")
-        if ships_lenghts.count(2) != 3:
+        if ships_lengths.count(2) != 3:
             raise Exception("Invalid number of ships")
-        if ships_lenghts.count(3) != 2:
+        if ships_lengths.count(3) != 2:
             raise Exception("Invalid number of ships")
-        if ships_lenghts.count(4) != 1:
+        if ships_lengths.count(4) != 1:
             raise Exception("Invalid number of ships")
         for (row, column), ship in self.field.items():
             for deck_row in range(-1, 2):
